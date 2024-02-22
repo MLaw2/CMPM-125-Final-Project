@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Portions of this script were found using below source:
-// https://www.youtube.com/watch?v=53LNMtVGayU
-
 public class doubleJump : MonoBehaviour
 {
     Rigidbody playerRigidbody;
