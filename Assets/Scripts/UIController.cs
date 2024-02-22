@@ -23,9 +23,12 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
     }
-
+    public GameObject pauseScreen;
     public void UpdateHealthDisplay(int health)
     {
         healthText.text = "Health: " + health + "/" + PlayerHealthController.instance.maxHealth;
@@ -34,5 +37,20 @@ public class UIController : MonoBehaviour
         healthSlider.value = health;
     }
 
+    public void PauseUnpause()
+    {
 
+        pauseScreen.SetActive(!pauseScreen.activeSelf);
+        if(pauseScreen.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.None;
+
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Cursor.lockState= CursorLockMode.Locked;
+            Time.timeScale = 1f;
+        }
+    }
 }
