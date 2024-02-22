@@ -20,9 +20,7 @@ public class PlayerInput : MonoBehaviour
         move_vector = new UnityEngine.Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         UnityEngine.Vector3.Normalize(move_vector);
         rbody.AddForce(move_vector * move_speed);
-        if (Input.GetKeyDown("space")) {
-            rbody.AddForce(Vector3.up * jump_strength, ForceMode.Impulse);
-        }
+
 
     }
 }

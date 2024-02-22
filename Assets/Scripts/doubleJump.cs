@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Portions of this script were found using below source:
+// https://www.youtube.com/watch?v=53LNMtVGayU
+
 public class doubleJump : MonoBehaviour
 {
     Rigidbody playerRigidbody;
     public float jumpHeight = 10f;
     public bool isGrounded;
 
-    public int maxJumpCount = 2;
-    private int jumpsRemaining;
+    public static int maxJumpCount = 1;
+    public static int jumpsRemaining;
 
     // Start is called before the first frame update
     void Start()
