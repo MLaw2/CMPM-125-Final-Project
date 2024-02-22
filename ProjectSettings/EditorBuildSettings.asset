@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/PlatformLevel.unity
+    path: Assets/Scenes/Workplace.unity
     guid: 1f7027d1445607842b4df60f18e66b22
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
