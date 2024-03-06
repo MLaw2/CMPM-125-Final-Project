@@ -23,10 +23,10 @@ public class doubleJump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGrounded || jumpsRemaining > 0)
-            {
+            //if (isGrounded || jumpsRemaining > 0)
+            //{
                 Jump();
-            }
+            //}
         }
     }
 

@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float speed = 6f;
-    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float jumpImpulse = 7f;
     [SerializeField] private float gravity = 10f;
 
     [Header("Camera Settings")]
     [SerializeField] private float cameraSpeed = 2f;
-    [SerializeField] private float cameraFOV = 45f;
+    [SerializeField] private float cameraFOV = 60f; // complete misnomer bruh
 
     private CharacterController characterController;
     private Camera playerCamera;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0f;
+
+    // parameters for making vertical movement work properly
+    [SerializeField] private float verticalVelocity = 0f;
 
     private void Start()
     {
@@ -26,9 +29,9 @@ public class movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        //StartCoroutine(GravityCoroutine());
+        //StartCoroutine(JumpCoroutine());
         StartCoroutine(MovementCoroutine());
-        StartCoroutine(JumpCoroutine());
-        StartCoroutine(GravityCoroutine());
         StartCoroutine(CameraMovementCoroutine());
     }
 
@@ -43,26 +46,45 @@ public class movement : MonoBehaviour
             Vector3 xVector = transform.right * horizontalInput;
             moveDirection = (zVector + xVector).normalized * speed;
 
-            moveDirection.y -= gravity * Time.deltaTime;
+            // calculating vertical velocity through gravity and jump impulse
+            if (!characterController.isGrounded){
+                verticalVelocity -= gravity * Time.deltaTime;
+            }
+            else {
+                verticalVelocity = 0f;
+            }
+            //if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                verticalVelocity = jumpImpulse;
+            }
+            moveDirection.y += verticalVelocity;
+
+            Debug.Log("Vertical Translation: " + moveDirection.y);
             characterController.Move(moveDirection * Time.deltaTime);
 
             yield return null;
         }
     }
 
+    // TODO: Jump seems to be instantly translating the character to a point in space (when I can get it to work). Scuffed.
     private IEnumerator JumpCoroutine()
     {
         while (true)
         {
-            if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            //Debug.Log("output of grounded: " + characterController.isGrounded);
+            //Debug.Log("space pressed? " + Input.GetKeyDown(KeyCode.Space));
+            //if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                moveDirection.y = jumpForce;
+                Debug.Log("Jump Coroutine vector: " + moveDirection.y);
+                moveDirection.y += jumpImpulse;
             }
 
             yield return null;
         }
     }
 
+    // TODO: Gravity is currently acting as a flat velocity rather than a negative acceleration. This should be fixed.
     private IEnumerator GravityCoroutine()
     {
         while (true)
@@ -70,7 +92,8 @@ public class movement : MonoBehaviour
             if (!characterController.isGrounded)
             {
                 moveDirection.y -= gravity * Time.deltaTime;
-                characterController.Move(moveDirection * Time.deltaTime);
+                Debug.Log("Gravity Coroutine vector: " + moveDirection.y);
+                //characterController.Move(moveDirection * Time.deltaTime);
             }
 
             yield return null;
