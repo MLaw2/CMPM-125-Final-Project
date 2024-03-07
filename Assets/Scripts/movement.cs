@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
             }
             moveDirection.y += verticalVelocity;
 
-            Debug.Log("Vertical Translation: " + moveDirection.y);
+            //Debug.Log("Vertical Translation: " + moveDirection.y);
             characterController.Move(moveDirection * Time.deltaTime);
 
             yield return null;
@@ -76,7 +76,7 @@ public class Movement : MonoBehaviour
             //if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Jump Coroutine vector: " + moveDirection.y);
+                //Debug.Log("Jump Coroutine vector: " + moveDirection.y);
                 moveDirection.y += jumpImpulse;
             }
 
@@ -92,7 +92,7 @@ public class Movement : MonoBehaviour
             if (!characterController.isGrounded)
             {
                 moveDirection.y -= gravity * Time.deltaTime;
-                Debug.Log("Gravity Coroutine vector: " + moveDirection.y);
+                //Debug.Log("Gravity Coroutine vector: " + moveDirection.y);
                 //characterController.Move(moveDirection * Time.deltaTime);
             }
 
