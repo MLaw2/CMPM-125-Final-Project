@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Detects player on platform for seemless motion as platform moves.
+// Based on tutorial: https://youtu.be/ly9mK0TGJJo?si=oa7CsBvodWL9eHFO
+// Last edited by Matthew Guo
 public class PlatformDetector : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == "Player")
+        if (other.gameObject.name == "Player")
         {
-            collision.gameObject.transform.SetParent(transform);
+            Debug.Log("Enter");
+            other.transform.SetParent(transform);
         }
     }
-
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.name == "Player")
+        if (other.gameObject.name == "Player")
         {
-            collision.gameObject.transform.SetParent(null);
+            Debug.Log("Exit");
+            other.transform.SetParent(null);
         }
     }
 }

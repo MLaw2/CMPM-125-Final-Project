@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Platform moves towards waypoints in a loop
+// Based on tutorial: https://youtu.be/VcxsK5khTms?si=hWder4o561vNIruF
+// Last edited by Matthew Guo
 public class MovingPlatform : MonoBehaviour
 {
     public List<Transform> waypoints;
