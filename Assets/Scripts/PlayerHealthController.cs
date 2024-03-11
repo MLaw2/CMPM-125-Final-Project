@@ -21,6 +21,10 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject[] modelDisplay;
     private float flashCounter;
     public float flashTime = .1f;
+    public AudioSource loseHealthSound;
+
+    // Reference to the red flash GameObject
+    public GameObject redFlash;
 
     // Start is called before the first frame update
     void Start()
@@ -66,13 +70,29 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (invincCounter <= 0)
         {
+            // Trigger red flash effect
+            StartCoroutine(RedFlashEffect());
 
             invincCounter = invincibilityLength;
 
             currentHealth--;
 
             UIController.instance.UpdateHealthDisplay(currentHealth);
+
+            loseHealthSound.Play();
         }
+    }
+
+    IEnumerator RedFlashEffect()
+    {
+        // Activate red flash UI element
+        redFlash.SetActive(true);
+
+        // Adjust the duration of the flash
+        yield return new WaitForSeconds(0.2f);
+
+        // Deactivate red flash UI element
+        redFlash.SetActive(false);
     }
 
     public void FillHealth()
@@ -81,8 +101,11 @@ public class PlayerHealthController : MonoBehaviour
 
         UIController.instance.UpdateHealthDisplay(currentHealth);
     }
+
     void GameOver()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         // Switch to the "Game Over" scene
         SceneManager.LoadScene("GameOver");
     }
