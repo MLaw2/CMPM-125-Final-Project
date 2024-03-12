@@ -232,6 +232,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &109677748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061483066545828050, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+  m_PrefabInstance: {fileID: 1900319163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &109677754
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109677748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &193138521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4644269266076512442, guid: a5a2c14ada85b3f40aa0c9005198302e, type: 3}
       propertyPath: m_LocalScale.z
-      value: -3.0000377
+      value: 3.0171378
       objectReference: {fileID: 0}
     - target: {fileID: 4644269266076512442, guid: a5a2c14ada85b3f40aa0c9005198302e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1590,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7684613520066249988, guid: 64088f369e96571469e30b30f32e6e66, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2492,7 +2524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+      propertyPath: superJumpForce
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5763475966224265507, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
       propertyPath: redFlash
@@ -2502,6 +2538,10 @@ PrefabInstance:
       propertyPath: loseHealthSound
       value: 
       objectReference: {fileID: 12012630}
+    - target: {fileID: 6660001360526626137, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7061867537035946905, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
       propertyPath: cam
       value: 
@@ -2549,7 +2589,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1061483066545828050, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 109677754}
   m_SourcePrefab: {fileID: 100100000, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
 --- !u!1001 &1918891231
 PrefabInstance:
