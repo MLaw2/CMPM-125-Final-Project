@@ -2524,7 +2524,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
       propertyPath: jumpForce
-      value: 30
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+      propertyPath: walkSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
+      propertyPath: sprintSpeed
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2196442649609526282, guid: a427a3d61df811445b89f5a8e6571d02, type: 3}
       propertyPath: superJumpForce
