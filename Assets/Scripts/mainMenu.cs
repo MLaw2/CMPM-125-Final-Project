@@ -10,6 +10,7 @@ public class mainMenu : MonoBehaviour
     public string Credits;
     public string Options;
     public string MainMenu;
+    public string Manual;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,11 @@ public class mainMenu : MonoBehaviour
     public void menu()
     {
         SceneManager.LoadScene(MainMenu);
+    }
+
+    public void manual()
+    {
+        SceneManager.LoadScene(Manual);
     }
 }
 
