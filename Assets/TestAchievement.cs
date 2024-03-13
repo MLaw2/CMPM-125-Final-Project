@@ -18,7 +18,8 @@ public class TestAchievement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            AchievementTracker.instance.GiveAchievement("Testing, Testing", "juan, two, tree");
+            AchievementTracker.instance.GiveAchievement("You Found ME!", "whoa! How'd you get up here");
+
             Destroy(this.gameObject);
         }
     }
