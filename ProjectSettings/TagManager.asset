@@ -8,6 +8,7 @@ TagManager:
   - SuperJumpObject
   - Platform
   - CheckPoint
+  - GameMusic
   layers:
   - Default
   - TransparentFX
