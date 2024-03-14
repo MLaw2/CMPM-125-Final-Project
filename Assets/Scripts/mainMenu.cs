@@ -56,5 +56,14 @@ public class mainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void restart()
+    {
+
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(FirstLevel);
+        Time.timeScale = 1f;
+
+
+    }
 }
 

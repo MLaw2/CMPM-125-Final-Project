@@ -40,7 +40,7 @@ public class DoNotDestroy : MonoBehaviour
                 isMusicPlaying = false;
             }
         }
-        else if (scene.name == "GameOver" || scene.name == "MainMenu")
+        else if (scene.name == "GameOver" || scene.name == "MainMenu"|| scene.name=="EndScreen")
         {
             if (audioSource != null && !isMusicPlaying)
             {

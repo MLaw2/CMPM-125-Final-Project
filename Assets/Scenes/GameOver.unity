@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1757e0b4d4fc1f49b97e0ab4fe2ea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevel: SampleScene
+  FirstLevel: Level 1
   Credits: 
   Options: 
   MainMenu: MainMenu
