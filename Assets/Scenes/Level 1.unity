@@ -10490,6 +10490,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 774431903}
     - target: {fileID: 6146799022587495671, guid: 0ed43360322fba14eb30cab70a392ab6, type: 3}
+      propertyPath: sensX
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146799022587495671, guid: 0ed43360322fba14eb30cab70a392ab6, type: 3}
+      propertyPath: sensY
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146799022587495671, guid: 0ed43360322fba14eb30cab70a392ab6, type: 3}
       propertyPath: orientation
       value: 
       objectReference: {fileID: 2054117814}
