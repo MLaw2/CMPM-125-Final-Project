@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -111,11 +112,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
+            if((Math.Abs(verticalInput) + Math.Abs(horizontalInput)) != 0) {
+                if (state == MovementState.sprinting) {
+                    StartCoroutine(FootstepAudio.instance.PlaySprinting());
+                }
+                StartCoroutine(FootstepAudio.instance.PlayFootsteps());
+            }
         }
         else if (!grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
         }
     }
 
