@@ -29,6 +29,9 @@ public class mainMenu : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(FirstLevel);
+        Time.timeScale = 1f;
+
+
     }
 
     public void options()

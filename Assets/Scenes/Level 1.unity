@@ -9926,7 +9926,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 45fab154d533dc24aad0a7b7cc4a9163, type: 3}
   m_Resource: {fileID: 8300000, guid: 45fab154d533dc24aad0a7b7cc4a9163, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.687
+  m_Volume: 0.096
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22342,7 +22342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278106944732623739, guid: 8aa7f781ee3c57a41825007f88e4682a, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6725023578931985931, guid: 8aa7f781ee3c57a41825007f88e4682a, type: 3}
       propertyPath: m_IsActive
