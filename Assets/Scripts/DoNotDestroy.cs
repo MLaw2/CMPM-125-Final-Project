@@ -32,7 +32,7 @@ public class DoNotDestroy : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "SampleScene")
+        if (scene.name == "Level 1")
         {
             if (audioSource != null && isMusicPlaying)
             {
