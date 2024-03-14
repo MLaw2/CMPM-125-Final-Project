@@ -22336,6 +22336,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6278106944732623739, guid: 8aa7f781ee3c57a41825007f88e4682a, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278106944732623739, guid: 8aa7f781ee3c57a41825007f88e4682a, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6725023578931985931, guid: 8aa7f781ee3c57a41825007f88e4682a, type: 3}
       propertyPath: m_IsActive
       value: 0
