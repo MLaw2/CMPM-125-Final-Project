@@ -29,8 +29,6 @@ public class Movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        //StartCoroutine(GravityCoroutine());
-        //StartCoroutine(JumpCoroutine());
         StartCoroutine(MovementCoroutine());
         StartCoroutine(CameraMovementCoroutine());
     }
@@ -61,40 +59,6 @@ public class Movement : MonoBehaviour
 
             //Debug.Log("Vertical Translation: " + moveDirection.y);
             characterController.Move(moveDirection * Time.deltaTime);
-
-            yield return null;
-        }
-    }
-
-    // TODO: Jump seems to be instantly translating the character to a point in space (when I can get it to work). Scuffed.
-    private IEnumerator JumpCoroutine()
-    {
-        while (true)
-        {
-            //Debug.Log("output of grounded: " + characterController.isGrounded);
-            //Debug.Log("space pressed? " + Input.GetKeyDown(KeyCode.Space));
-            //if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //Debug.Log("Jump Coroutine vector: " + moveDirection.y);
-                moveDirection.y += jumpImpulse;
-            }
-
-            yield return null;
-        }
-    }
-
-    // TODO: Gravity is currently acting as a flat velocity rather than a negative acceleration. This should be fixed.
-    private IEnumerator GravityCoroutine()
-    {
-        while (true)
-        {
-            if (!characterController.isGrounded)
-            {
-                moveDirection.y -= gravity * Time.deltaTime;
-                //Debug.Log("Gravity Coroutine vector: " + moveDirection.y);
-                //characterController.Move(moveDirection * Time.deltaTime);
-            }
 
             yield return null;
         }
